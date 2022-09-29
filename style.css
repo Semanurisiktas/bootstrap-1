@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600&display=swap%27');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:rgb(24, 26, 31);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.index-slide{
+    overflow:hidden;
+    width:100%;
+    height:450px;
+    border-radius: 10px;
+}
+
+.product-card{
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position:relative;
+}
+
+.product-card p{
+    font-weight: 500;
+    text-align: center;
+}
+
+.product-card::before{
+    /* before-after kullanmak icin content:"" kullanmamiz sart! */
+    content:" ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* kart ile ayni boyut */
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    /* ------------  */
+    background-color: #353b48;
+    opacity: 0.3;
+    height: 0%;
+    transition: all 0.7s ease;
+}
+
+.product-btn{
+    position: absolute;
+    /* translate, top ve left degerleri olmadan tam ortalamaz! */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    opacity: 0;
+  }
+
+  .product-card:hover .product-btn{
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+    transition: all 0.7s ease;
+  }
+
+  .product-card:hover::before{
+    height: 100%;
+  }
+
+  /* cardlari ortalamak icin */
+  .row{
+    justify-content:center;
+  }
+
+  .my-nav {
+    background: #141518;
+    color: white;
+  }
+
+  .about-text {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 20px 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-family: "JetBrains Mono", monospace;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+
+
+
+
